@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LionBeat Training</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="hero">
+    <!-- Header -->
+    <header class="hero__content">
+      <h1 class="title">LIONBEATTRAINING</h1>
+      <h2 class="subtitle">ENTRENA COMO UN CAMPEÓN,<br>COMPITE COMO UN HÉROE</h2>
+      <p class="description">Libera tu potencial en el entrenamiento híbrido.</p>
+      <a href="#registro" class="cta-button">ÚNETE AL RETO HOY</a>
+    </header>
+
+    <!-- Imagen HERO -->
+    <section class="hero__image">
+      <img src="assets/hero-image.png" alt="Entrenamiento híbrido" class="full-hero-image" />
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="https://instagram.com/lionbeat__" target="_blank" rel="noopener">@lionbeat__</a>
+      <div class="price-button">REGÍSTRATE - 50 €/MES</div>
+    </footer>
+
+    <!-- Formulario conectado -->
+    <section id="registro" class="form-section">
+      <h3>Regístrate al reto</h3>
+      <form id="registro-form">
+        <input type="text" name="nombre" placeholder="Nombre completo" required />
+        <input type="email" name="email" placeholder="Correo electrónico" required />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Script para enviar a Google Sheets -->
+  <script>
+    document.getElementById('registro-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        nombre: form.nombre.value,
+        email: form.email.value
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbwa8lUZNawcqVWUhwdiHioBQ649NvmiIXF9kJgo8kkUdQ9CDFgS4PkhYLJZECwfJrrVsA/exec', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(res => {
+        alert('¡Registro enviado con éxito!');
+        form.reset();
+      })
+      .catch(err => {
+        alert('Error al enviar el formulario');
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>

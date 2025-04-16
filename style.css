@@ -1,0 +1,181 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Contenedor principal */
+  .hero {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Encabezado */
+  .title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #f57c00;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Botón CTA */
+  .cta-button {
+    background-color: #f57c00;
+    color: #000;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff9800;
+  }
+  
+  /* Imagen HERO */
+  .hero__image {
+    margin: 2rem 0;
+  }
+  
+  .full-hero-image {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+  }
+  
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .price-button {
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  /* Formulario */
+  .form-section {
+    background: #111;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 12px;
+    color: #fff;
+    text-align: left;
+  }
+  
+  .form-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-section input,
+  .form-section button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .form-section input {
+    background: #222;
+    color: #fff;
+  }
+  
+  .form-section button {
+    background-color: #f57c00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .form-section button:hover {
+    background-color: #ff9800;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .subtitle {
+      font-size: 1rem;
+    }
+  
+    .description {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+    }
+  
+    .cta-button {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
+  
+    .full-hero-image {
+      border-radius: 0;
+    }
+  
+    .footer {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .price-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
