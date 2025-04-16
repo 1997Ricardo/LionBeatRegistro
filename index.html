@@ -53,13 +53,13 @@
 
       fetch('https://script.google.com/macros/s/AKfycbwa8lUZNawcqVWUhwdiHioBQ649NvmiIXF9kJgo8kkUdQ9CDFgS4PkhYLJZECwfJrrVsA/exec', {
   method: 'POST',
+  mode: 'no-cors', // 👈 importante
   headers: {
-    'Content-Type': 'application/json'  // 🔥 esta línea es clave
+    'Content-Type': 'application/json'
   },
   body: JSON.stringify(data)
 })
-.then(res => res.json())
-.then(res => {
+.then(() => {
   alert('¡Registro enviado con éxito!');
   form.reset();
 })
